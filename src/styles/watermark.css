@@ -1,0 +1,54 @@
+.watermark {
+  position: fixed;
+  right: 24px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.85);
+  padding: 6px 16px 6px 8px;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 13px;
+  color: #333;
+  opacity: 0.85;
+  z-index: 9999;
+}
+.watermark-icon {
+  height: 22px;
+  margin-right: 8px;
+}
+.watermark-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Large size for homepage */
+.watermark-large {
+  position: fixed;
+  right: 32px;
+  bottom: 28px;
+  font-size: 17px;
+  padding: 10px 28px 10px 12px;
+}
+.watermark-icon-large {
+  height: 32px;
+}
+.watermark-text-large {
+  font-size: 17px;
+}
+
+/* Small size for login form */
+.watermark-small {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  font-size: 13px;
+  padding: 6px 16px 6px 8px;
+}
+.watermark-icon-small {
+  height: 22px;
+}
+.watermark-text-small {
+  font-size: 13px;
+} 

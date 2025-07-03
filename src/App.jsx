@@ -11,8 +11,8 @@ function App() {
   return (
     <>
     {/* <Navbar/> */}
-     <Login/>
-     {/* <Homepage/> */}
+     {/* <Login/> */}
+     <Homepage/>
      {/* <ImageQuery/> */}
     </>
   )

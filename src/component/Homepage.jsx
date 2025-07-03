@@ -14,6 +14,8 @@ import {
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Watermark from "./Watermark";
+import "../styles/watermark.css";
 
 const cardData = [
   {
@@ -42,7 +44,7 @@ const Homepage = () => {
   return (
     <>
       <Navbar />
-      <Box sx={{ padding: 4, backgroundColor: "#f4f4f4", minHeight: "100vh" }}>
+      <Box sx={{ padding: 4, backgroundColor: "#f4f4f4", minHeight: "100vh", position: "relative" }}>
         <Typography
           variant="h4"
           fontWeight="bold"
@@ -94,6 +96,7 @@ const Homepage = () => {
             </Grid>
           ))}
         </Grid>
+        <Watermark size="large" />
       </Box>
     </>
   );

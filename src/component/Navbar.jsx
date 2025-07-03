@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "#111111e3", px: 3 }}>
+    <AppBar position="sticky" sx={{ backgroundColor: "#111111c9", px: 3 }}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Logo */}
         <Box component={Link} to="/home" sx={{ display: "flex", alignItems: "center" }}>

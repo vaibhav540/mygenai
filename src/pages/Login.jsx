@@ -11,6 +11,7 @@ import {
   Grid,
 } from "@mui/material";
 import "../styles/login.css";
+import "../styles/watermark.css";
 
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -18,6 +19,7 @@ import { motion } from "framer-motion";
 import AtgLogo from "../assets/logos/Atgeir-New-Logo_Dark.svg";
 import heroLogo from "../assets/logos/heroLogo.png";
 import bikeImage1 from "../assets/logos/heroLogo1.png";
+import Watermark from "../component/Watermark";
 
 const Login = () => {
   const [alert, setAlert] = useState(false);
@@ -49,63 +51,88 @@ const Login = () => {
   };
 
   return (
-    <Grid container sx={{ minHeight: "100vh", overflow: "hidden" }}>
-      {/* Left Side Bike Image with animation */}
-      <Grid
-        item
-        xs={12}
-        md={6}
+    <Box
+      sx={{
+        minHeight: "100vh",
+        width: "100vw",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#f5f5f5",
+      }}
+    >
+      <Box
         sx={{
-          backgroundColor: "#f5f5f5",
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "center",
-          position: "relative",
+          gap: { xs: 4, md: 8 },
+          width: { xs: "100%", md: "auto" },
+          maxWidth: 900,
+          px: 2,
         }}
       >
-        <motion.img
-          src={bikeImage1}
-          alt="Hero Bike"
-          initial={{ x: "-100%", opacity: 0, rotate: -10 }}
+        {/* Logo Image with same height as form, no background */}
+        <motion.div
+          initial={{ x: -80, opacity: 0, rotate: -10 }}
           animate={{ x: 0, opacity: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 50, damping: 12 }}
           style={{
-            width: "100%",
-            maxWidth: "600px",
-            objectFit: "contain",
-            zIndex: 1,
+            height: 480,
+            width: 340,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "none",
+            borderRadius: 0,
+            boxShadow: "none",
+            marginBottom: 0,
           }}
-        />
-      </Grid>
-
-      {/* Right Side Login Form with animation from right to left */}
-      <Grid
-        item
-        xs={12}
-        md={6}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        sx={{ backgroundColor: "#fff" }}
-      >
+        >
+          <img
+            src={bikeImage1}
+            alt="Hero Logo"
+            style={{
+              height: "100%",
+              width: "100%",
+              objectFit: "contain",
+              background: "none",
+              borderRadius: 0,
+              boxShadow: "none",
+              display: "block",
+            }}
+          />
+        </motion.div>
+        {/* Animated Login Form */}
         <motion.div
-          initial={{ x: "100%", opacity: 0 }}
+          initial={{ x: 80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+          style={{ width: "100%", maxWidth: 400, position: "relative" }}
         >
           <Paper
             elevation={6}
             sx={{
               padding: 6,
-              maxWidth: 450,
-              width: "90%",
+              maxWidth: 400,
+              width: "100%",
               borderLeft: "5px solid #E60000",
               borderRadius: "10px",
               zIndex: 2,
+              position: "relative",
+              margin: "0 auto",
+              minHeight: 560,
+              height: 560,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
             }}
           >
-            <form onSubmit={handleLogin}>
+            <Box>
+              <div style={{ display: "flex", justifyContent: "center", marginBottom: 24 }}>
+                <img src={heroLogo} alt="Hero Logo" style={{ width: 120, height: "auto" }} />
+              </div>
               <Typography
                 variant="h5"
                 sx={{ color: "black", fontWeight: 700 }}
@@ -115,68 +142,65 @@ const Login = () => {
               <Typography variant="body2" sx={{ mt: 2, mb: 3 }}>
                 Welcome Back. Please login to your account
               </Typography>
-
-              <FormControl fullWidth sx={{ mb: 3 }} required>
-                <InputLabel htmlFor="email">Email Address</InputLabel>
-                <OutlinedInput
-                  id="email"
-                  name="email"
-                  label="Email Address"
-                  placeholder="Enter email"
-                  type="email"
-                  sx={{
-                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "#E60000",
-                    },
-                  }}
-                />
-              </FormControl>
-
-              <FormControl fullWidth sx={{ mb: 4 }} required>
-                <InputLabel htmlFor="password">Password</InputLabel>
-                <OutlinedInput
-                  id="password"
-                  name="password"
-                  label="Password"
-                  placeholder="Enter password"
-                  type="password"
-                  sx={{
-                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "#E60000",
-                    },
-                  }}
-                />
-              </FormControl>
-
+              <form onSubmit={handleLogin} id="login-form">
+                <FormControl fullWidth sx={{ mb: 3 }} required>
+                  <InputLabel htmlFor="email">Email Address</InputLabel>
+                  <OutlinedInput
+                    id="email"
+                    name="email"
+                    label="Email Address"
+                    placeholder="Enter email"
+                    type="email"
+                    sx={{
+                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#E60000",
+                      },
+                    }}
+                  />
+                </FormControl>
+                <FormControl fullWidth sx={{ mb: 4 }} required>
+                  <InputLabel htmlFor="password">Password</InputLabel>
+                  <OutlinedInput
+                    id="password"
+                    name="password"
+                    label="Password"
+                    placeholder="Enter password"
+                    type="password"
+                    sx={{
+                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#E60000",
+                      },
+                    }}
+                  />
+                </FormControl>
+                {alert && (
+                  <Alert
+                    severity="error"
+                    onClose={() => setAlert(false)}
+                    sx={{ mb: 3 }}
+                  >
+                    Wrong Email or Password
+                  </Alert>
+                )}
+              </form>
+            </Box>
+            <Box>
               <Button
                 variant="contained"
                 fullWidth
                 type="submit"
                 className="button-10"
-                sx={{ py: 1.5, mb: 3 }}
+                sx={{ py: 1.5, mb: 2 }}
+                form="login-form"
               >
                 Log In
               </Button>
-
-              {alert && (
-                <Alert
-                  severity="error"
-                  onClose={() => setAlert(false)}
-                  sx={{ mb: 3 }}
-                >
-                  Wrong Email or Password
-                </Alert>
-              )}
-
-              <Box display="flex" justifyContent="space-between" mt={2}>
-                {/* <Box component="img" src={AtgLogo} alt="Atgeir Logo" width={125} /> */}
-                {/* <Box component="img" src={heroLogo} alt="Hero Logo" width={130} /> */}
-              </Box>
-            </form>
+              <Watermark size="small" />
+            </Box>
           </Paper>
         </motion.div>
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 };
 
