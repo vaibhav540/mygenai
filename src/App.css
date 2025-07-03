@@ -1,0 +1,303 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.resize {
+  width: 0;
+  height: 0vh;
+  /*and eventually delay an overflow:auto; */
+  transition: width 0.1s linear;
+  border: none;
+}
+
+.resize.opened {
+  width: 400px;
+  height: 50vh;
+  transition: width 0.2s linear;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.image-design {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.image-box:hover {
+  border: 1px solid lightskyblue;
+  background-color: rgba(135, 206, 250, 0.5);
+}
+
+.image-selected {
+  border: 1px solid lightskyblue;
+  background-color: rgba(135, 206, 250, 0.7);
+}
+
+:root .nav-underline {
+  --bs-nav-underline-gap: 0.5rem;
+  --bs-nav-underline-border-width: 0.125rem;
+  --bs-nav-underline-link-active-color: rgba(249, 135, 59, 0.9);
+  gap: var(--bs-nav-underline-gap);
+}
+
+.fadein {
+  animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeout {
+  animation: fadeout 0.5s;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.pdf-card {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: all 1s ease;
+}
+
+.pdf-card:hover {
+  transform: translateY(-5px);
+  transition: all 0.5s ease;
+}
+
+.resizei {
+  height: 70px;
+  overflow: hidden;
+}
+
+.resizei:hover ~ .top-shadow {
+  box-shadow: none;
+}
+
+.resizei:hover {
+  height: max-content;
+  min-height: 70px;
+}
+
+.top-shadow {
+  box-shadow: 0 -5px 4px -5px #333;
+}
+
+.laskd {
+  color: #a8840f;
+}
+
+.checkbox-input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+
+  &:checked + .checkbox-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(#000, 0.1);
+
+    /* color: #2260ff; */
+    &:before {
+      transform: scale(1);
+      opacity: 1;
+      background-color: #2260ff;
+      border-color: #2260ff;
+    }
+
+    .checkbox-icon,
+    .checkbox-label {
+      color: #2260ff;
+    }
+  }
+
+  &:focus + .checkbox-tile {
+    /* border-color: #2260ff; */
+    box-shadow: 0 5px 10px rgba(#000, 0.1), 0 0 0 4px #b5c9fc;
+
+    &:before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(235, 235, 235, 0.9);
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(#000, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  animation-duration: 1000ms;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 0.25rem;
+    right: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.25s ease;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  &:hover {
+    border-color: #2260ff;
+
+    &:before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.button-34 {
+  background: #5e5df0;
+  border-radius: 999px;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+    NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+    EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 13px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  display: flex;
+  gap: 5px;
+  height: 30px;
+}
+
+.button-34:disabled {
+  background: #8080ec;
+}
+
+.card-input-element {
+  display: none;
+}
+
+.card-input:hover {
+  cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+  box-shadow: 0 0 1px 1px #19a353;
+}
+
+.like {
+  color: #086eb5;
+}
+
+:root .avatar-jsw {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.product-card {
+  background-color: #fff !important;
+  position: relative;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 120px;
+  margin: 10px;
+  height: 110px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.orb-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,27 @@
+.button-10 {
+  display: flex;
+  justify-content: center;
+  padding: 10px 18px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #E60000, #000000);
+  background-origin: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.button-10:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.button-10:focus {
+  outline: 0;
+  box-shadow: 0px 0px 0px 3px rgba(230, 0, 0, 0.3);
+}
