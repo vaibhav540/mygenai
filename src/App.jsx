@@ -1,21 +1,8 @@
-import { useState } from 'react'
-// import './App.css'
-import Login from './pages/Login'
-import "./styles/homepage.css"
-import Navbar from './component/Navbar'
-import Homepage from './component/Homepage'
-import ImageQuery from './pages/ImageQuery'
+import MainRoutes from './routes/routes';
+import "./styles/homepage.css";
 
 function App() {
-
-  return (
-    <>
-    {/* <Navbar/> */}
-     {/* <Login/> */}
-     <Homepage/>
-     {/* <ImageQuery/> */}
-    </>
-  )
+  return <MainRoutes />;
 }
 
-export default App
+export default App;

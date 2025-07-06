@@ -16,14 +16,14 @@ import Navbar from "../component/Navbar";
 import {
   Menu as MenuIcon,
   Home as HomeIcon,
-  Image as ImageIcon,
+  PhotoCamera as PhotoIcon,
   ChevronLeft as ChevronLeftIcon,
   Send as SendIcon,
 } from "@mui/icons-material";
 
 const drawerWidth = 240;
 
-const ImageQuery = () => {
+const ImageTraining = () => {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [query, setQuery] = useState("");
@@ -34,7 +34,7 @@ const ImageQuery = () => {
 
   const handleQuerySubmit = () => {
     if (query.trim()) {
-      console.log("Query submitted:", query);
+      console.log("Image training query submitted:", query);
       setQuery("");
     }
   };
@@ -80,7 +80,7 @@ const ImageQuery = () => {
           <List>
             {[
               { text: "Home", icon: <HomeIcon />, route: "/home" },
-              { text: "Image Query", icon: <ImageIcon />, route: "/image" },
+              { text: "Image Training", icon: <PhotoIcon />, route: "/train-image" },
             ].map((item, index) => (
               <ListItem button key={index} onClick={() => navigate(item.route)}>
                 <ListItemIcon sx={{ color: "#fff" }}>{item.icon}</ListItemIcon>
@@ -112,11 +112,11 @@ const ImageQuery = () => {
           )}
 
           <Typography variant="h4" sx={{ mb: 4 }}>
-            Image Query Page
+            Image Training Page
           </Typography>
 
           <Typography>
-            This is your Hero-styled GenAI interface for image queries.
+            This is your Hero-styled GenAI interface for image training.
           </Typography>
         </Box>
 
@@ -137,7 +137,7 @@ const ImageQuery = () => {
           <TextField
             fullWidth
             variant="outlined"
-            placeholder="Ask your image-related query..."
+            placeholder="Ask your image training-related query..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyPress={(e) => e.key === "Enter" && handleQuerySubmit()}
@@ -157,5 +157,4 @@ const ImageQuery = () => {
   );
 };
 
-export default ImageQuery;
-
+export default ImageTraining;

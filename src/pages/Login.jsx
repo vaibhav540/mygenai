@@ -33,12 +33,12 @@ const Login = () => {
     if (
       (email === "genaidemo@atgeirsolutions.com" &&
         password === "AtgeirAdmin@1234!") ||
-      (email === "ashok_leyland_demo@atgeirsolutions.com" &&
+      (email === "hero_motorcorp_demo@atgeirsolutions.com" &&
         password === "AtgeirAdmin@1234") ||
       (email === "webinardemo@atgeirsolutions.com" &&
         password === "AtgeirAdmin@1234") ||
-      (email === "urvashi@atgeirsolutions.com" && password === "Urvashi@1234") ||
-      (email === "m&mdemo@atgeirsolutions.com" && password === "M&MDemo@2026!!")
+      (email === "heromotorp_limited@admin.com" && password === "heroMotor@1234") ||
+      (email === "heromotors_admin@gmail.com" && password === "heroMotor@1234!!")
     ) {
       sessionStorage.setItem("authentication", JSON.stringify(email));
       sessionStorage.setItem("region", JSON.stringify("INT"));
