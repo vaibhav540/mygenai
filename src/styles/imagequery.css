@@ -1,0 +1,53 @@
+/* pages/ImageQuery.css */
+.image-query-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 24px;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-open {
+  margin-left: 0;
+}
+
+.menu-toggle-btn {
+  margin-bottom: 16px;
+}
+
+.page-title {
+  margin-bottom: 32px !important;
+  color: #333;
+  font-weight: 700;
+}
+
+.page-description {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.input-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  transition: left 0.3s ease;
+  z-index: 1200;
+}
+
+.submit-btn {
+  color: #E60000 !important;
+}

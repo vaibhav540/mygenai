@@ -63,7 +63,7 @@ const Navbar = () => {
   // };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "#111111c9", px: 3 }}>
+    <AppBar position="sticky" sx={{ backgroundColor: "white", px: 2,height: 80 }}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Logo */}
         <Box component={Link} to="/home" sx={{ display: "flex", alignItems: "center" }}>
@@ -71,7 +71,7 @@ const Navbar = () => {
             component="img"
             src={heroLogo}
             alt="Hero Logo"
-            sx={{ width: 130 }}
+            sx={{ width: 160 }}
           />
         </Box>
 
@@ -80,7 +80,7 @@ const Navbar = () => {
           <IconButton
             onClick={handleProfileMenuOpen}
             size="large"
-            sx={{ ml: 2, color: "white" }}
+            sx={{ ml: 2, color: "black" }}
           >
             <AccountCircleIcon fontSize="large" />
           </IconButton>

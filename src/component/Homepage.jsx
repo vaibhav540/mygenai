@@ -71,7 +71,7 @@ const Homepage = () => {
                   onClick={() => navigate(card.route)}
                   sx={{
                     cursor: "pointer",
-                    background: "linear-gradient(120deg,rgb(211, 27, 27), #000000)",
+                    background: "linear-gradient(360deg,rgb(211, 27, 27), #000000)",
                     color: "white",
                     borderRadius: "16px",
                     boxShadow: 6,

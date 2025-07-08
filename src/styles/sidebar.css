@@ -1,0 +1,43 @@
+/* components/Sidebar.css */
+.sidebar-drawer {
+  flex-shrink: 0;
+}
+
+.sidebar-drawer .MuiDrawer-paper {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  width: var(--drawer-width);
+  background: var(--sidebar-bg);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px;
+  height: 64px;
+}
+
+.sidebar-toggle-btn {
+  color: #fff !important;
+}
+
+.sidebar-list {
+  padding: 0;
+}
+
+.sidebar-list-item {
+  padding: 8px 16px;
+}
+
+.sidebar-icon {
+  min-width: 40px !important;
+  color: #fff !important;
+}
+
+.sidebar-text span {
+  color: #fff;
+  font-weight: 500;
+}
